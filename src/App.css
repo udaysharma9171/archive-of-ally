@@ -1,0 +1,36 @@
+.app-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.main-content {
+  z-index: 10;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-signature {
+  position: absolute;
+  bottom: 2rem;
+  font-size: 0.75rem;
+  opacity: 0.4;
+  font-family: var(--font-serif);
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  z-index: 20;
+  color: var(--color-parchment);
+  transition: opacity 1s ease;
+}
+
+.footer-signature:hover {
+  opacity: 0.8;
+}

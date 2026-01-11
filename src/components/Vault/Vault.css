@@ -1,0 +1,112 @@
+.vault-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 1.5s ease;
+}
+
+.vault-container.unlocking {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.vault-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  z-index: 10;
+}
+
+.vault-title {
+  font-family: var(--font-serif);
+  color: var(--color-gold);
+  font-size: 3rem;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  margin-bottom: 0.5rem;
+}
+
+.vault-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.4em;
+  color: var(--color-parchment);
+  opacity: 0.6;
+}
+
+.bookshelf-blurred {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  filter: blur(15px);
+  opacity: 0.7;
+  transform: scale(0.9);
+  margin-bottom: 4rem;
+  pointer-events: none;
+  transition: all 1s ease;
+}
+
+/* The actual "shatter" or fade effect handled by container opacity, but we can make books glow */
+.vault-container.unlocking .bookshelf-blurred {
+  filter: blur(0px);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.password-section {
+  z-index: 20;
+}
+
+.password-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-gold-dim);
+  color: var(--color-parchment);
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  text-align: center;
+  width: 300px;
+  transition: all 0.3s ease;
+}
+
+.password-input:focus {
+  outline: none;
+  border-bottom-color: var(--color-gold);
+  box-shadow: 0 10px 20px -10px rgba(212, 175, 55, 0.2);
+}
+
+.password-input::placeholder {
+  color: rgba(245, 241, 230, 0.2);
+}
+
+.password-input.error {
+  border-bottom-color: #ff4444;
+  animation: shake 0.5s ease;
+}
+
+.unlock-btn {
+  display: block;
+  margin: 20px auto 0;
+  color: var(--color-gold-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease;
+}
+
+.password-form:hover .unlock-btn,
+.password-input:focus + .unlock-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}

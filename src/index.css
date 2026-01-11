@@ -1,0 +1,36 @@
+:root {
+  --color-forest: #1A2F23;
+  --color-parchment: #F5F1E6;
+  --color-gold: #D4AF37;
+  --color-gold-dim: #8A7224;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  --transition-slow: 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-medium: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-forest);
+  color: var(--color-parchment);
+  font-family: var(--font-sans);
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-family: inherit;
+}
