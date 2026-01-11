@@ -1,13 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './AudioPlayer.css';
+import backgroundMusic from './she_dont_give_a.mp3';
 
 const AudioPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
-  // Placeholder audio - royalty free Kevin MacLeod or similar recommended
-  // For now using a sample lofi track URL or empty
-  const audioSrc = "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=lofi-study-112778.mp3"; 
+  const audioSrc = backgroundMusic; 
 
   const togglePlay = () => {
     if (isPlaying) {
